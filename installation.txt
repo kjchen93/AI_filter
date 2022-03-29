@@ -1,0 +1,26 @@
+sudo apt update --yes
+sudo apt upgrade --yes
+
+# Get Miniforge and make it the main Python interpreter
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh -O ~/miniforge.sh
+bash ~/miniforge.sh -b -p ~/miniforge
+rm ~/miniforge.sh
+
+echo "PATH=$PATH:$HOME/miniforge/bin" >> .bashrc
+source .bashrc
+
+
+# create a virtual environment using YAML  find out how to remove a virtual environment too
+# Need to find out which packages we need to install and specific python version see other openCV projects
+
+
+
+
+# Project goal
+
+# set filter use dial to adjust
+
+and/or
+
+# add hand-gesture to flip between filters
+
