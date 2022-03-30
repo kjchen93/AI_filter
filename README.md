@@ -1,3 +1,12 @@
+# Another Instagram Filter (AI-Filter)
+
+## Hardware
+
+ - Logitech HD Pro C920
+
+ - JETSON NANO DEVELOPER KIT
+
+
 ## Setup 
 
 Create an environment with dependencies specified in env.yml:
@@ -7,18 +16,31 @@ Create an environment with dependencies specified in env.yml:
  Activate the new environment:
     
     conda activate aif
+
+ Install Mediapipe
+
+    pip install mediapipe
     
- Inside the new environment, instatll IPython kernel so we can use this environment in jupyter notebook: 
+ Install the **aif** IPython kernel in order to use in jupyter lab : 
     
     python -m ipykernel install --user --name aif
 
 
- Homework 1 (only) is a Jupyter Notebook. With the above done you should be able to get underway by typing:
+ Deploy jupyter lab with no browser and open accessibility:
 
-    jupyter lab --no-browser
-    
- To make sure we are using the right environment, go to the toolbar of exploring_word_vectors.ipynb, click on Kernel -> Change kernel, you should see and select cs224n in the drop-down menu.
+    jupyter lab --no-browser --ip="0.0.0.0"
 
- To deactivate an active environment, use
+ Follow the instructions to run jupyter lab on browser
+
+ Make sure the the kernel is correct.
+
+ To deactivate the environment, open the terminal and run:
     
     conda deactivate
+ ### Note:
+ To run on headless, open a jupyter compatible browser and type:
+    
+    <IP>:8888/lab?
+## Author
+
+Kai Chen
