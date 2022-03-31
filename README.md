@@ -1,5 +1,7 @@
 # Another Instagram Filter (AI-Filter)
 
+## Description
+
 ## Hardware
 
  - Logitech HD Pro C920
@@ -7,7 +9,25 @@
  - JETSON NANO DEVELOPER KIT
 
 
-## Setup 
+## Install miniforge on JETSON NANO to run jupyter lab
+Update and upgrade
+```bash
+sudo apt update --yes
+sudo apt upgrade --yes
+```
+Get miniforge for aarch64
+```bash
+   wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh -O ~/miniforge.sh
+   bash ~/miniforge.sh -b -p ~/miniforge
+   rm ~/miniforge.sh
+```
+Update Path
+```bash
+echo "PATH=$PATH:$HOME/miniforge/bin" >> .bashrc
+source .bashrc
+```
+
+## Setup Jupyter Lab
 
 Create an environment with dependencies specified in env.yml:
     
@@ -17,9 +37,6 @@ Create an environment with dependencies specified in env.yml:
     
     conda activate aif
 
- Install Mediapipe
-
-    pip install mediapipe
     
  Install the **aif** IPython kernel in order to use in jupyter lab : 
     
@@ -32,7 +49,7 @@ Create an environment with dependencies specified in env.yml:
 
  Follow the instructions to run jupyter lab on browser
 
- Make sure the the kernel is correct.
+ Make sure the the kernel is `aif`.
 
  To deactivate the environment, open the terminal and run:
     
@@ -41,6 +58,12 @@ Create an environment with dependencies specified in env.yml:
  To run on headless, open a jupyter compatible browser and type:
     
     <IP>:8888/lab?
+ 
+ Where `<IP>` is the IP address of the JETSON NANO.
+
+ ## Usage
+
+
 ## Author
 
 Kai Chen
